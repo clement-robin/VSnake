@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Clément
- *
- */
-module VSnake {
-}

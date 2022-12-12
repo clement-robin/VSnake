@@ -1,6 +1,9 @@
 package main;
 
 import javax.swing.*;
+
+import Painters.Painter;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +29,8 @@ public class Graphics extends JPanel implements ActionListener {
     String direction = "Droite";
     boolean isMoving = false;
     final Timer timer = new Timer(150, this);
+    
+    Painter p;
 
     public Graphics() {
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -75,6 +80,7 @@ public class Graphics extends JPanel implements ActionListener {
         isMoving = true;
         spawnFood();
         timer.start();
+        p = new Painter("snake-graphics.png");
     }
 
     @Override
@@ -82,19 +88,14 @@ public class Graphics extends JPanel implements ActionListener {
         super.paintComponent(g);
 
         if (isMoving) {
-            g.setColor(Color.BLUE);
-            g.fillOval(food.getPosX(), food.getPosY(), TICK_SIZE, TICK_SIZE);
-
-            g.setColor(Color.DARK_GRAY);
-            for (int i = 0; i < snakeLength; i++) {
-                g.fillRect(snakePosX[i], snakePosY[i], TICK_SIZE, TICK_SIZE);
-            }
+        	p.paintFood(g, food);
+            p.paintSnake(g, snakePosX, snakePosY, snakeLength);
         } else {
             String scoreText = String.format("The End... Score: %d... Press any key to play again!", foodEaten);
             g.setColor(Color.BLACK);
             g.setFont(font);
             g.drawString(scoreText, (WIDTH - getFontMetrics(g.getFont()).stringWidth(scoreText)) / 2, HEIGHT / 2);
-        }
+        }   
     }
 
     protected void move() {

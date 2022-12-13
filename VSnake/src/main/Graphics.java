@@ -39,7 +39,7 @@ public class Graphics extends JPanel implements ActionListener {
     
     String direction2;
     boolean isMoving2 = false;
-    final Timer timer = new Timer(150, this);
+    final Timer timer = new Timer(700, this);
 
     public Graphics() {
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));

@@ -18,7 +18,7 @@ public class Client {
 			
 			//final Hashtable<String, Integer> message1 = (Hashtable<String, Integer>) ois.readObject();
 			//int rep = message1.get("test");
-			Test message = (Test)ois.readObject();
+			Snake message = (Snake)ois.readObject();
 			//int[][] tableau = (int[][])ois.readObject();
 
 			
@@ -26,7 +26,7 @@ public class Client {
 			
 			//final Hashtable<String, Integer> message2 = (Hashtable<String, Integer>) ois.readObject();
 			//int rep2 = message2.get("timing");
-			Test message2 = (Test)ois.readObject();
+			Snake message2 = (Snake)ois.readObject();
 			//int[][] tableau2 = (int[][])ois.readObject();
 			
 			System.out.println(message2.getSnakeLenght());

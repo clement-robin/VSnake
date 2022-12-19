@@ -26,7 +26,7 @@ public class Serveur {
 			for(int j = 0 ; j < 10 ; j++) {
 				message.add(j);
 			}*/
-			Test oui = new Test(new int[192], new int[192],5,"Droite",true);
+			Snake oui = new Snake(new int[192], new int[192],5,"Droite",true);
 
 			
 			OutputStream out = client.getOutputStream();
@@ -44,7 +44,7 @@ public class Serveur {
 			//ArrayList<Integer> message2 = new ArrayList<Integer>();
 			//int[][] tableau2 = new int[10][10];
 			//message2.add(timeInt);
-			Test oui2 = new Test(new int[192], new int[192],timeInt,"Droite",true);
+			Snake oui2 = new Snake(new int[192], new int[192],timeInt,"Droite",true);
 			oos.writeObject(oui2);
 			
 			client.close();

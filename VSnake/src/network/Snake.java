@@ -2,14 +2,14 @@ package network;
 
 import java.io.Serializable;
 
-public class Test implements Serializable{
+public class Snake implements Serializable{
 	private int[] snakePosX;
 	private int[] snakePosY;
 	private int snakeLength;
 	private String direction;
 	private boolean isMoving;
 	
-	public Test (int[] parSnakePosX, int[] parSnakePosY, int parSnakeLength, String parDirection, boolean parisMoving) {
+	public Snake (int[] parSnakePosX, int[] parSnakePosY, int parSnakeLength, String parDirection, boolean parisMoving) {
 		this.snakePosX = parSnakePosX;
 		this.snakePosY = parSnakePosY;
 		this.snakeLength = parSnakeLength;
@@ -19,9 +19,5 @@ public class Test implements Serializable{
 	
 	public int getSnakeLenght() {
 		return this.snakeLength;
-	}
-	
-	public String toString() {
-		return "oui tqt";
 	}
 }
